@@ -1,6 +1,6 @@
 
 
-##########   Fig 4B Dynamical cluster change of for scATAC-seq: IL12, IL15 on 3 timepoints ########
+############  Fig 4B Dynamical cluster change of for scATAC-seq: IL12, IL15 on 3 timepoints ########
 library(ggplot2)
 library(reshape2)
 library(ggsci)
