@@ -1,6 +1,6 @@
 
 
-################## Fig 5 E-F GO pathway for CEBPB and CEBPD target genes  ###################
+################## Fig 5 E-F GO pathway for CEBPB and CEBPD target genes  #####################
 
 library(reshape2)
 library(ggplot2)
