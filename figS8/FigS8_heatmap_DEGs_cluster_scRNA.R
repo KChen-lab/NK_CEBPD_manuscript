@@ -1,6 +1,6 @@
 
 
-################## Fig S8 heatmap for cluster level DEGs (scRNA) ###################
+################## Fig S8 heatmap for cluster level DEGs (scRNA) #####################
 
 
 ####################  heatmap by cluster  
