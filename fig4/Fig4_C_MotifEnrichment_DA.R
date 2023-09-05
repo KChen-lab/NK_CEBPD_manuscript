@@ -1,5 +1,5 @@
 
-##########   Fig 4C Motif enrichment for cluster 6 specific accessibility regions ########
+############   Fig 4C Motif enrichment for cluster 6 specific accessibility regions ########
 
 
 # compare of TFs in cluster 2 and 5 
