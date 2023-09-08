@@ -1,6 +1,6 @@
 #################### Fig 5 C-D VlnPlot for CEBPB and CEBPD difference between IL21 and IL15 ###################
 
-figs <- readRDS(file="/rsrch1/bcb/kchen_group/data/Rezvani/SC122_scRNA_ATAC/result_Jan1_2022/atac/merge/figs/CEBP_geneAcce/CEBPD.target.RDS")
+figs <- readRDS(file="CEBPD.target.RDS")
 p <- figs
 p$data$id <- as.character(p$data$id)
 
