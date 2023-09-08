@@ -5,7 +5,7 @@
 
 ####################  heatmap by cluster  
 library(dplyr) 
-DEGs <- readRDS(file="/rsrch1/bcb/kchen_group/data/Rezvani/SC122_scRNA_ATAC/result_May29_2022/DEGs_byClst_rna.RDS")
+DEGs <- readRDS(file="DEGs_byClst_rna.RDS")
 DEGs %>%
     group_by(cluster) %>%
     top_n(n = 10, wt = avg_logFC) -> top10
