@@ -6,7 +6,7 @@ library(reshape2)
 library(ggplot2)
 
 
-dt <- read.csv(file="./../result_Jan1_2022/atac/CEBP_TFs/CEBPD_pathway.csv")
+dt <- read.csv(file="CEBPD_pathway.csv")
 
 dt$Count[7]<-7
 dt$adj_pval <- (0-log10(dt$P.value))
