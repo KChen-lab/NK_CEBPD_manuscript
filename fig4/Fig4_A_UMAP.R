@@ -12,7 +12,7 @@ library(Seurat)
 
 ##########   Fig 4A UMAP for scATAC-seq: IL12, IL15 on 3 timepoints ########
 
-part_rmIL12 <- readRDS(file="/rsrch1/bcb/kchen_group/data/Rezvani/SC122_scRNA_ATAC/result_May29_2022/atac_IL21_15.RDS")
+part_rmIL12 <- readRDS(file="atac_IL21_15.RDS")
 part_rmIL12@meta.data$product <- part_rmIL12@meta.data$orig.ident
 part_rmIL12@meta.data$ID  <- paste0(part_rmIL12@meta.data$product,"_", part_rmIL12@meta.data$time)
 Idents(part_rmIL12) <-part_rmIL12@meta.data$seurat_clusters
