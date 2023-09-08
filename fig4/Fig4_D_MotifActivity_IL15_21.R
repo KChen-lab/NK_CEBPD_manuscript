@@ -2,7 +2,7 @@
 ###########   Fig 4D Motif-based TF activity level difference between IL21 and Il15 ########
 
 #day3$pvalue<-log10(day3$pvalue)
-tf_change <- readRDS(file="./tf_day3_9_il15_21.RDS")
+tf_change <- readRDS(file="tf_day3_9_il15_21.RDS")
 day3<-tf_change$day3
 
 
