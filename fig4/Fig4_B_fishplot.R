@@ -25,8 +25,9 @@ sta$Cluster <- as.factor(sta$Cluster)
 sta$Product <- factor(sta$Product, levels=c("IL21_GBM_9","IL15_GBM_9","IL21_GBM_3","IL15_GBM_3","IL21_baseline","IL15_baseline"))
 
 
-prev <- melt(atac_sta)
-colnames(prev) <- c("clone_id","timepoint","clonal_prev")
+prev <- melt(sta)
+colnames(prev) <- c("clone_id","timepoint","clonal_prev","val1","val2")
+prev$clonal_prev <- prev$val2
 prev$clonal_prev[is.na(prev$clonal_prev)]<-0
 edges <- data.frame("source" = rep("N0", nrow(sta)),
                     "target" =  as.character(unique(prev$clone_id))[seq(1, nrow(sta))])
@@ -40,8 +41,10 @@ prev<-rbind(prev,tp)
 #mycolor_code <- col2hex(nk_color)
 
 #clone_color <- data.frame(clone_id = as.character(unique(prev$clone_id)), colour =c( mycolor_code,"#808080"))
-clone_color <- data.frame(clone_id = c(seq(0,nrow(sta),1)),
-                          colour =c( vega_20_scanpy[seq(1, nrow(sta),1)],"#808080"))
+
+clone_color <- data.frame(clone_id = unique(prev$clone_id),
+                          colour =c(vega_20[head(seq(unique(prev$clone_id)),-1)],"#808080"))
+
 nk_plt<-timescape(clonal_prev =prev[grepl("IL15", prev[,2]), ], tree_edges = edges, clone_colours =clone_color , height=400, alpha=15)
 htmlwidgets::saveWidget(nk_plt,file.path(paste0("~/project/nk_multiOme/atac.NK.IL15.html")))
 nk_plt<-timescape(clonal_prev =prev[grepl("IL21", prev[,2]), ], tree_edges = edges, clone_colours =clone_color , height=400, alpha=15)
