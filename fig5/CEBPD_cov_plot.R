@@ -3,13 +3,14 @@
 
 library(Signac)
 library(Seurat)
+library(ggplot2)
 
 ranges.show <- StringToGRanges("chr8-47738000-47738350") 
 ranges.show$color <- "gray20" 
 
 Idents(obj) <- obj@meta.data$ID
 obj@meta.data$ID <- factor(obj@meta.data$ID, levels=c("IL15_baseline","IL21_baseline",  "IL15_GBM_3","IL21_GBM_3","IL15_GBM_9","IL21_GBM_9"))
-
+r <- "CEBPD"
 cov_plot<-CoveragePlot(
         object = obj,
         assay = "peaks",
